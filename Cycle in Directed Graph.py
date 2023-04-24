@@ -4,11 +4,14 @@ import sys
 sys.setrecursionlimit(1000000)
 from collections import defaultdict
 class Graph:
+    @staticmethod
     def __init__(self,v):
         self.d=defaultdict(list)
         self.V=v
+    @staticmethod
     def addedge(self,u,v):
         self.d[u].append(v)
+    @staticmethod    
     def cycleditact(self,s,visited,restack):
         visited[s]=True
         restack[s]=True
@@ -20,6 +23,7 @@ class Graph:
                 return True
         restack[s]=False
         return False
+    @staticmethod
     def cycle(self):
         visited=[False for i in range(self.V+1)]
         restack=[False for i in range(self.V+1)]
@@ -32,6 +36,7 @@ class Solution:
     # @param A : integer
     # @param B : list of list of integers
     # @return an integer
+    @staticmethod
     def solve(self, A, B):
         g=Graph(A)
         for p in B:
